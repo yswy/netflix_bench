@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 映射文件，映射到对应的SQL接口 -->
+<mapper namespace="com.zuoer.netflix.bench.dal.mapper.WebAccessLogDealMapper">
+ 
+	<!--返回的结果集，用于关联实体类属性和数据库字段 -->
+	<!--如果实体类属性和数据库属性名保持一致，就不需要javaType和jdbcType（必须大写）属性 -->
+	<resultMap id="WebAccessLogDeal_resultMap" type="com.zuoer.netflix.bench.dal.entity.WebAccessLogDealDO">
+		<result column="ID" property="id" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result column="DEAL" property="deal" javaType="boolean" jdbcType="INTEGER" />
+		<result column="GMT_CREATE" property="gmtCreate" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		<result column="GMT_MODIFIED" property="gmtModified" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		<result column="GMT_ACCESS" property="gmtAccess" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<!-- 查询数据 -->
+	<select id="selectById" resultMap="WebAccessLogDeal_resultMap">
+		select ID, DEAL, GMT_CREATE, GMT_MODIFIED, GMT_ACCESS  from web_access_log_deal where id = #{id}
+	</select>
+ 
+</mapper>

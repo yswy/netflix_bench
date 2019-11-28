@@ -1,0 +1,27 @@
+server:
+  port: 80
+  
+application:
+   root:
+      path: D:/bench_zuoer/netflix.bench
+
+
+spring: 
+   freemarker: 
+      #prefix: classpath:/templates/
+      #allow-request-override : false
+      #cache: true
+      #check-template-location: true
+      #content-type: text/html
+      #expose-request-attributes: false
+      #expose-session-attributes: false
+      #expose-spring-macro-helpers: false
+      #prefix: screen/
+      suffix: .ftl
+      template-loader-path: classpath:/templates/
+   datasource: 
+      url: jdbc:oracle:thin:@10.0.0.91:1521/dev
+      jdbcUrl: jdbc:oracle:thin:@10.0.0.91:1521/dev
+      username: aisport_miniprogapi_base
+      password: aisport_miniprogapi_base
+      driver-class-name: oracle.jdbc.driver.OracleDriver

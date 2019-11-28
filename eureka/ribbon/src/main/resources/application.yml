@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: netflix-bench-eureka-ribbon
+
+server:
+  port: 8764
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  freemarker:
+    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false

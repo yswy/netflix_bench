@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: netflix-bench-eureka-client
+
+server:
+  port: 8762
+  
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    port: 8763
