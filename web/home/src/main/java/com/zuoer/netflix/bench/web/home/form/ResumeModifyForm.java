@@ -1,5 +1,7 @@
 package com.zuoer.netflix.bench.web.home.form;
 
+import java.util.List;
+
 /**
  * 修改简历表单
  *
@@ -32,7 +34,7 @@ public class ResumeModifyForm {
 	/**
 	 * 原始 tags
 	 */
-	private String rawTags;
+	private List<String> rawTags;
 
 	public Integer getId() {
 		return id;
@@ -74,11 +76,11 @@ public class ResumeModifyForm {
 		this.description = description;
 	}
 
-	public String getRawTags() {
+	public List<String> getRawTags() {
 		return rawTags;
 	}
 
-	public void setRawTags(String rawTags) {
+	public void setRawTags(List<String> rawTags) {
 		this.rawTags = rawTags;
 	}
 

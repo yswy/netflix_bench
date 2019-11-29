@@ -4,6 +4,8 @@
  */
 package com.zuoer.netflix.bench.core.service;
 
+import java.util.List;
+
 import com.zuoer.netflix.bench.core.request.ArticleCreateRequest;
 import com.zuoer.netflix.bench.core.request.ArticleModifyRequest;
 import com.zuoer.netflix.bench.core.result.ArticleOperateResult;
@@ -29,4 +31,11 @@ public interface ArticleManageComponent {
 	 * @return
 	 */
 	public ArticleOperateResult modify(ArticleModifyRequest request);
+	
+	/**
+	 * 删除
+	 * @param request
+	 * @return
+	 */
+	public ArticleOperateResult deleteByIds(List<Integer> ids);
 }

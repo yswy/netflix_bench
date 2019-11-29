@@ -4,7 +4,10 @@
  */
 package com.zuoer.netflix.bench.core.service;
 
+import java.util.List;
+
 import com.zuoer.netflix.bench.core.model.Article;
+import com.zuoer.netflix.bench.core.request.ArticleSearchRequest;
 
 /**
  * 文章查询组件
@@ -20,4 +23,23 @@ public interface ArticleQueryComponent {
 	 * @return
 	 */
 	public Article getById(int id);
+	
+	/**
+	 * 查询全部
+	 * @return
+	 */
+	public List<Article> getAll();
+	
+	/**
+	 * 搜索
+	 * @return
+	 */
+	public List<Article> search(ArticleSearchRequest request);
+	
+	/**
+	 * 根据tagId查询
+	 * @param tagId
+	 * @return
+	 */
+	public List<Article> getByTagId(int tagId);
 }

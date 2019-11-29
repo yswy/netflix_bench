@@ -42,7 +42,6 @@ import com.zuoer.netflix.bench.base.exception.BenchRuntimeException;
  */
 public class ClassUtils {
 
-
 	public static final ClassUtils INSTANCE = new ClassUtils();
 
 	/**
@@ -55,7 +54,7 @@ public class ClassUtils {
 		try {
 			return clasz.newInstance();
 		} catch (Exception e) {
-			throw new BenchRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "实例化类异常,class=" + clasz);
+			throw new BenchRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "实例化类异常,class=" + clasz);
 		}
 	}
 
@@ -88,7 +87,7 @@ public class ClassUtils {
 		try {
 			return Class.forName(clasz).newInstance();
 		} catch (Exception e) {
-			throw new BenchRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "实例化类异常,class=" + clasz);
+			throw new BenchRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "实例化类异常,class=" + clasz);
 		}
 	}
 	/*
@@ -1499,16 +1498,16 @@ public class ClassUtils {
 	}
 
 	/**
-	 *  attempts to load through the thread context class loader. Only if thread context class loader is
-	 * inaccessible, or it can't find the class will it attempt to fall back to the class loader that loads the FreeMarker classes.
+	 * attempts to load through the thread context class loader. Only if thread context class loader is inaccessible, or it can't find the class will it attempt to fall
+	 * back to the class loader that loads the FreeMarker classes.
 	 */
 	public static Class forName(String className) throws ClassNotFoundException {
 		try {
 			return Class.forName(className, true, Thread.currentThread().getContextClassLoader());
 		} catch (ClassNotFoundException e) {
-			;// Intentionally ignored
+			// Intentionally ignored
 		} catch (SecurityException e) {
-			;// Intentionally ignored
+			// Intentionally ignored
 		}
 		// Fall back to default class loader
 		return Class.forName(className);
@@ -1652,7 +1651,7 @@ public class ClassUtils {
 		} catch (Exception e) {
 			if (CL_class.getSuperclass() != null) {
 				returnSet.addAll(list(CL.getParent()));
-			}
+			} 
 			return returnSet;
 		}
 	}
@@ -1661,8 +1660,6 @@ public class ClassUtils {
 		ClassLoader myCL = Thread.currentThread().getContextClassLoader();
 		System.out.println(list(myCL));
 	}
-
-
 
 	/**
 	 * 判断一个类的方法是否被重载了
@@ -1679,8 +1676,6 @@ public class ClassUtils {
 	public static boolean isOverride(Class<?> clasz, Class<?> superClass, String methodName, Class<?>... methodParameterTypes) throws NoSuchMethodException {
 		return superClass.getMethod(methodName, methodParameterTypes) != clasz.getMethod(methodName, methodParameterTypes);
 	}
-
-
 
 	private static ParameterNameDiscoverer parameterNameDiscoverer = new DefaultParameterNameDiscoverer();
 

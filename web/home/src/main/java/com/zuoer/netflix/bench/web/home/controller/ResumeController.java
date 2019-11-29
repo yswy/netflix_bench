@@ -16,10 +16,6 @@
  */
 package com.zuoer.netflix.bench.web.home.controller;
 
-import me.zbl.fullstack.controller.base.BaseController;
-import me.zbl.fullstack.entity.Resume;
-import me.zbl.fullstack.entity.dto.form.ResumeModifyForm;
-import me.zbl.fullstack.service.api.IResumeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +24,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.zuoer.netflix.bench.base.json.JsonOutputResult;
+import com.zuoer.netflix.bench.core.model.Resume;
+import com.zuoer.netflix.bench.core.request.ResumeModifyRequest;
+import com.zuoer.netflix.bench.core.result.ResumeOperateResult;
+import com.zuoer.netflix.bench.core.service.ResumeManageComponent;
+import com.zuoer.netflix.bench.core.service.ResumeQueryComponent;
+import com.zuoer.netflix.bench.web.home.controller.base.BaseController;
+import com.zuoer.netflix.bench.web.home.form.ResumeModifyForm;
+
 /**
  * @author JamesZBL
  * @date 2018-03-28
@@ -35,26 +40,41 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class ResumeController extends BaseController {
 
-  @Autowired
-  private IResumeService mResumeService;
+	@Autowired
+	private ResumeQueryComponent resumeQueryComponent;
 
-  @ModelAttribute
-  public Resume createResume() {
-    return new Resume();
-  }
+	@Autowired
+	private ResumeManageComponent resumeManageComponent;
 
-  @GetMapping("/resume")
-  public String getResume(Model model) {
-    Resume resume = mResumeService.getResume();
-    model.addAttribute("article", resume);
-    return "resume";
-  }
+	@ModelAttribute
+	public Resume createResume() {
+		return new Resume();
+	}
 
+	@GetMapping("/resume")
+	public String getResume(Model model) {
+		Resume resume = resumeQueryComponent.getLastOne();
+		model.addAttribute("article", resume);
+		return "resume";
+	}
 
-  @PostMapping("/update_resume.f")
-  @ResponseBody
-  public Object updateResume(ResumeModifyForm form, @ModelAttribute(binding = false) Resume resume) {
-    mResumeService.updateResume(form, resume);
-    return responseSimpleOK();
-  }
+	@PostMapping("/update_resume.f")
+	@ResponseBody
+	public Object updateResume(ResumeModifyForm form, @ModelAttribute(binding = false) Resume resume) {
+		JsonOutputResult jsonResult = new JsonOutputResult();
+
+		ResumeModifyRequest request = new ResumeModifyRequest();
+		request.setHtmlMaterial(form.getHtmlMaterial());
+		request.setIntroduction(form.getDescription());
+		request.setMdMaterial(form.getMdMaterial());
+		request.setTitle(form.getTitle());
+		request.setTagNameList(form.getRawTags());
+		request.setId(form.getId());
+		ResumeOperateResult resumeOperateResult = resumeManageComponent.modify(request);
+		jsonResult.setSuccess(resumeOperateResult.isSuccess());
+		jsonResult.setError(resumeOperateResult.getError());
+		jsonResult.setDetailMessage(resumeOperateResult.getDetailMessage());
+
+		return jsonResult;
+	}
 }

@@ -10,16 +10,28 @@ import java.util.Date;
 public class Resume {
 
   /**
-   * PrimaryKey
+   * 主键id
    */
   private Integer id;
 
+  /**
+   * 标题
+   */
   private String title;
 
+  /**
+   * 创建时间
+   */
   private Date gmtCreate;
 
+  /**
+   * 修改时间
+   */
   private Date gmtModified;
 
+  /**
+   * 简介
+   */
   private String introduction;
 
   /**

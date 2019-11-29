@@ -10,7 +10,7 @@ import java.util.Date;
 public class User {
 
   /**
-   * PrimaryKey
+   * 主键id
    */
   private Integer id;
 
@@ -19,18 +19,39 @@ public class User {
    */
   private String username;
 
+  /**
+   * 密码
+   */
   private String password;
 
+  /**
+   * 生日
+   */
   private Date birthDate;
 
+  /**
+   * 昵称
+   */
   private String nickname;
 
+  /**
+   * 邮箱
+   */
   private String email;
 
+  /**
+   * github地址
+   */
   private String github;
 
+  /**
+   * qq
+   */
   private String qq;
 
+  /**
+   * 微信
+   */
   private String wecaht;
 
   /**
@@ -48,8 +69,14 @@ public class User {
    */
   private Integer level;
 
+  /**
+   * 创建时间
+   */
   private Date gmtCreate;
 
+  /**
+   * 修改时间
+   */
   private Date gmtModified;
 
   private String hobby;

@@ -1,36 +1,58 @@
-package com.zuoer.netflix.bench.dal.entity;
+/**
+ * BenchCode.com Inc.
+ * Copyright (c) 2005-2009 All Rights Reserved.
+ */
+package com.zuoer.netflix.bench.core.request;
 
 import java.util.Date;
 
 /**
- * 普通用户类
+ * 用户注册请求
+ * 
+ * @author zuoer
  *
- * @author James
+ * @version $Id: UserRegisterRequest.java, v 0.1 2019年11月28日 下午7:36:00 zuoer Exp $
  */
-public class UserDO {
-
-	/**
-	 * PrimaryKey
-	 */
-	private Integer id;
+public class UserRegisterRequest {
 
 	/**
 	 * 用户名
 	 */
 	private String username;
 
+	/**
+	 * 密码
+	 */
 	private String password;
 
+	/**
+	 * 生日
+	 */
 	private Date birthDate;
 
+	/**
+	 * 昵称
+	 */
 	private String nickname;
 
+	/**
+	 * 邮箱
+	 */
 	private String email;
 
+	/**
+	 * github地址
+	 */
 	private String github;
 
+	/**
+	 * qq
+	 */
 	private String qq;
 
+	/**
+	 * 微信
+	 */
 	private String wecaht;
 
 	/**
@@ -48,23 +70,11 @@ public class UserDO {
 	 */
 	private Integer level;
 
-	private Date gmtCreate;
-
-	private Date gmtModified;
-
 	private String hobby;
 
 	private String motto;
 
 	private String mdInfo;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getUsername() {
 		return username;
@@ -152,22 +162,6 @@ public class UserDO {
 
 	public void setLevel(Integer level) {
 		this.level = level;
-	}
-
-	public Date getGmtCreate() {
-		return gmtCreate;
-	}
-
-	public void setGmtCreate(Date gmtCreate) {
-		this.gmtCreate = gmtCreate;
-	}
-
-	public Date getGmtModified() {
-		return gmtModified;
-	}
-
-	public void setGmtModified(Date gmtModified) {
-		this.gmtModified = gmtModified;
 	}
 
 	public String getHobby() {
