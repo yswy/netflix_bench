@@ -1,4 +1,4 @@
-package com.zuoer.netflix.bench.core.constant;
+package com.zuoer.netflix.bench.core.model.constant;
 
 /**
  * 关于 Sesion 的全局常量

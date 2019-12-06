@@ -7,7 +7,7 @@ package com.zuoer.netflix.bench.core.service;
 import java.util.List;
 
 import com.zuoer.netflix.bench.core.model.Article;
-import com.zuoer.netflix.bench.core.request.ArticleSearchRequest;
+import com.zuoer.netflix.bench.core.model.request.ArticleSearchRequest;
 
 /**
  * 文章查询组件

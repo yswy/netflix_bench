@@ -27,6 +27,12 @@ public interface CommonMybatisMapper<T,PKTYPE> {
 	 */
 	public void deleteById(PKTYPE id);
 	
+	/**
+	 * 根据id删除
+	 * @param id
+	 */
+	public void deleteByIds(List<PKTYPE> id);
+	
 	/***
 	 * 插入
 	 * @param dbDo

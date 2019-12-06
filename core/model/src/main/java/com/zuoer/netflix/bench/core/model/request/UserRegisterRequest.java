@@ -2,7 +2,7 @@
  * BenchCode.com Inc.
  * Copyright (c) 2005-2009 All Rights Reserved.
  */
-package com.zuoer.netflix.bench.core.request;
+package com.zuoer.netflix.bench.core.model.request;
 
 import java.util.Date;
 

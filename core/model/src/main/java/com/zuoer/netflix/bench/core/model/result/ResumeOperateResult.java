@@ -2,7 +2,7 @@
  * BenchCode.com Inc.
  * Copyright (c) 2005-2009 All Rights Reserved.
  */
-package com.zuoer.netflix.bench.core.result;
+package com.zuoer.netflix.bench.core.model.result;
 
 import com.zuoer.netflix.bench.base.result.ResultBase;
 

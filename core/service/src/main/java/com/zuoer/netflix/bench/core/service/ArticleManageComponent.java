@@ -6,9 +6,9 @@ package com.zuoer.netflix.bench.core.service;
 
 import java.util.List;
 
-import com.zuoer.netflix.bench.core.request.ArticleCreateRequest;
-import com.zuoer.netflix.bench.core.request.ArticleModifyRequest;
-import com.zuoer.netflix.bench.core.result.ArticleOperateResult;
+import com.zuoer.netflix.bench.core.model.request.ArticleCreateRequest;
+import com.zuoer.netflix.bench.core.model.request.ArticleModifyRequest;
+import com.zuoer.netflix.bench.core.model.result.ArticleOperateResult;
 
 /**
  * 文章管理组件

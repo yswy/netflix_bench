@@ -6,8 +6,8 @@ package com.zuoer.netflix.bench.core.service;
 
 import java.util.List;
 
-import com.zuoer.netflix.bench.core.request.AdminUserPasswordModifyRequest;
-import com.zuoer.netflix.bench.core.result.AdminUserOperateResult;
+import com.zuoer.netflix.bench.core.model.request.AdminUserPasswordModifyRequest;
+import com.zuoer.netflix.bench.core.model.result.AdminUserOperateResult;
 
 /**
  * 管理员用户查询组件

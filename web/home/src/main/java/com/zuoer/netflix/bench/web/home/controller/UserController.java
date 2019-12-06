@@ -13,11 +13,12 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.zuoer.netflix.bench.base.utils.ConverterUtils;
 import com.zuoer.netflix.bench.base.utils.StringUtils;
 import com.zuoer.netflix.bench.core.constant.SessionConstants;
 import com.zuoer.netflix.bench.core.model.User;
-import com.zuoer.netflix.bench.core.request.UserRegisterRequest;
-import com.zuoer.netflix.bench.core.result.UserOperateResult;
+import com.zuoer.netflix.bench.core.model.request.UserRegisterRequest;
+import com.zuoer.netflix.bench.core.model.result.UserOperateResult;
 import com.zuoer.netflix.bench.core.service.UserManageComponent;
 import com.zuoer.netflix.bench.core.service.UserQueryComponent;
 import com.zuoer.netflix.bench.web.home.controller.base.BaseController;
@@ -70,7 +71,7 @@ public class UserController extends BaseController {
 		}
 
 		UserRegisterRequest userRegisterRequest = new UserRegisterRequest();
-
+		ConverterUtils.convert(registerForm, userRegisterRequest);
 		UserOperateResult userOperateResult = userManageComponent.register(userRegisterRequest);
 
 		if (!userOperateResult.isSuccess()) {

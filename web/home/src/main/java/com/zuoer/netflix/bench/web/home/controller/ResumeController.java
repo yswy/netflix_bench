@@ -26,8 +26,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zuoer.netflix.bench.base.json.JsonOutputResult;
 import com.zuoer.netflix.bench.core.model.Resume;
-import com.zuoer.netflix.bench.core.request.ResumeModifyRequest;
-import com.zuoer.netflix.bench.core.result.ResumeOperateResult;
+import com.zuoer.netflix.bench.core.model.request.ResumeModifyRequest;
+import com.zuoer.netflix.bench.core.model.result.ResumeOperateResult;
 import com.zuoer.netflix.bench.core.service.ResumeManageComponent;
 import com.zuoer.netflix.bench.core.service.ResumeQueryComponent;
 import com.zuoer.netflix.bench.web.home.controller.base.BaseController;

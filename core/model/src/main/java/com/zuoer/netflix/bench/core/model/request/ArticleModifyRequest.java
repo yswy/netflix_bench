@@ -2,7 +2,7 @@
  * BenchCode.com Inc.
  * Copyright (c) 2005-2009 All Rights Reserved.
  */
-package com.zuoer.netflix.bench.core.request;
+package com.zuoer.netflix.bench.core.model.request;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @version $Id: ArticleCreateRequest.java, v 0.1 2019年11月28日 下午5:57:50 zuoer Exp $
  */
-public class ResumeModifyRequest {
+public class ArticleModifyRequest {
 	
 	/**
 	 * 主键id

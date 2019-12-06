@@ -6,4 +6,11 @@ import com.zuoer.netflix.bench.dal.entity.UserDO;
  * @author James
  */
 public interface UserMapper extends CommonMybatisMapper<UserDO,Integer> {
+	
+	/**
+	 * 
+	 * @param userName
+	 * @return
+	 */
+	public UserDO selectByUserName(String userName);
 }

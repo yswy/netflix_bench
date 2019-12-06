@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.zuoer.netflix.bench.core.model.Article;
 import com.zuoer.netflix.bench.core.model.Tag;
-import com.zuoer.netflix.bench.core.request.ArticleSearchRequest;
+import com.zuoer.netflix.bench.core.model.request.ArticleSearchRequest;
 import com.zuoer.netflix.bench.core.service.ArticleQueryComponent;
 import com.zuoer.netflix.bench.core.service.TagQueryComponent;
 import com.zuoer.netflix.bench.web.home.controller.base.BaseController;

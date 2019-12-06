@@ -4,8 +4,8 @@
  */
 package com.zuoer.netflix.bench.core.service;
 
-import com.zuoer.netflix.bench.core.request.ResumeModifyRequest;
-import com.zuoer.netflix.bench.core.result.ResumeOperateResult;
+import com.zuoer.netflix.bench.core.model.request.ResumeModifyRequest;
+import com.zuoer.netflix.bench.core.model.result.ResumeOperateResult;
 
 /**
  *简历管理组件

@@ -4,8 +4,8 @@
  */
 package com.zuoer.netflix.bench.core.service;
 
-import com.zuoer.netflix.bench.core.request.UserRegisterRequest;
-import com.zuoer.netflix.bench.core.result.UserOperateResult;
+import com.zuoer.netflix.bench.core.model.request.UserRegisterRequest;
+import com.zuoer.netflix.bench.core.model.result.UserOperateResult;
 
 /**
  * 用户管理组件
